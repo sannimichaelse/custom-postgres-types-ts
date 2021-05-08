@@ -13,12 +13,12 @@ dbConnection().then(async connection => {
     // Add user
     console.log("Inserting a new user into the database...");
     const user = new User();
-    user.firstName = "Timber";
-    user.lastName = "Saw";
-    user.age = 25;
-    user.date_of_birth.date = 3;
-    user.date_of_birth.month = 'feb';
-    user.date_of_birth.year = '2019'
+    user.first_name = "Sanni";
+    user.last_name = "Michael";
+    user.age = 50;
+    user.date_of_birth.date = 5;
+    user.date_of_birth.month = 'dec';
+    user.date_of_birth.year = '2021'
     await userRepository.saveUser(user)
     console.log("Saved a new user with id: " + user.id);
 
