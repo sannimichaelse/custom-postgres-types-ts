@@ -13,4 +13,8 @@ export default class UserRepository extends Repository<User> {
         return await this.find();
     }
 
+    async getUserById(id: number) {
+        return await this.findOne({id});
+    }
+
 }

@@ -1,5 +1,6 @@
 import {Entity, PrimaryGeneratedColumn, Column} from "typeorm";
 import DateOfBirth from '../interface/DateOfBirth'
+import { UserRole } from '../interface/UserRoles'
 
 @Entity()
 export class User {
@@ -25,4 +26,11 @@ export class User {
         }
     })
     date_of_birth: DateOfBirth = new DateOfBirth(1, "jul", "2020");
+
+    @Column({
+        type: "enum",
+        enum: UserRole,
+        default: UserRole.USER
+    })
+    role: UserRole
 }

@@ -26,6 +26,14 @@ dbConnection().then(async connection => {
     const users = await userRepository.getUsers();
     console.log("Loaded users: ", users);
 
+    //get single user
+    const singleUser = await userRepository.getUserById(1);
+    console.log("Single user : ", singleUser);
+    console.log("User dob ", singleUser.date_of_birth)
+    console.log("User dob - date ", singleUser.date_of_birth.date)
+    console.log("User dob - month ", singleUser.date_of_birth.month)
+    console.log("User dob - year ", singleUser.date_of_birth.year)
+
 
     // // get all plans
     // const planRepository = getCustomRepository(PlanRepository);
